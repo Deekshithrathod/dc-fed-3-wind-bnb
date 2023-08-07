@@ -25,7 +25,7 @@ const Stay = ({ superHost, rating, beds, type, title, photo }: stayInfo) => {
             {superHost && <div className="superhost-badge">Super Host</div>}
             <div className="stay-apt">
               {type}
-              {beds !== null ? `. ${beds} beds` : ``}
+              {beds !== null ? ` . ${beds} beds` : ``}
             </div>
           </div>
           <div className="rating">
