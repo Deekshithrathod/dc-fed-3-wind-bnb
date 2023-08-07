@@ -19,7 +19,7 @@ const LocationSearch = () => {
             e.target.style.outline = `none`;
             setShowResults(true);
           }}
-          onBlur={(e) => {
+          onBlur={() => {
             setShowResults(false);
           }}
         />
