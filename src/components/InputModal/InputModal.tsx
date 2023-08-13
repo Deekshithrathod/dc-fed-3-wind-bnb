@@ -1,7 +1,6 @@
 import "./InputModal.css";
 import { Box } from "@mui/material";
 import Filters from "./Filters/Filters";
-import LocationFilterResult from "./FilterOuts/LocationFilterResult/LocationFilterResult";
 import { useRecoilState } from "recoil";
 import { guestsFilterState } from "../../atoms/filters";
 import LocResults from "./FilterOuts/LocResults/LocResults";
