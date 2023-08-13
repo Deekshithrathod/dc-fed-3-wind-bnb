@@ -1,6 +1,6 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">{Your project name}</h1>
+<h1 align="center">WindBnb - Airbnb Clone</h1>
 
 <div align="center">
    Solution for a challenge from  <a href="http://devchallenges.io" target="_blank">Devchallenges.io</a>.
@@ -8,11 +8,11 @@
 
 <div align="center">
   <h3>
-    <a href="https://{your-demo-link.your-domain}">
+    <a href="https://devchallenges-fed-3.onrender.com">
       Demo
     </a>
     <span> | </span>
-    <a href="https://{your-url-to-the-solution}">
+    <a href="https://github.com/Deekshithrathod/dc-fed-3-wind-bnb/tree/main">
       Solution
     </a>
     <span> | </span>
@@ -37,28 +37,34 @@
 
 ## Overview
 
-![screenshot](https://user-images.githubusercontent.com/16707738/92399059-5716eb00-f132-11ea-8b14-bcacdc8ec97b.png)
+|                    Desktop                     |                  Mobile                   |
+| :--------------------------------------------: | :---------------------------------------: |
+| ![Project On Desktop](public/demo-desktop.png) | ![Demo On Mobile](public/demo-mobile.png) |
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
-
-- Where can I see your demo?
-- What was your experience?
+- Where can I see your demo? [here](https://devchallenges-fed-3.onrender.com)
 - What have you learned/improved?
-- Your wisdom? :)
+  - Learnt using MUI Modals, state-management using Recoil
 
 ### Built With
 
 <!-- This section should list any major frameworks that you built your project using. Here are a few examples.-->
 
 - [React](https://reactjs.org/)
-- [Vue.js](https://vuejs.org/)
-- [Tailwind](https://tailwindcss.com/)
+- [Recoil](https://recoiljs.org/)
+- [Vite](https://vitejs.dev/)
 
 ## Features
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
 This application/site was created as a submission to a [DevChallenges](https://devchallenges.io/challenges) challenge. The [challenge](https://devchallenges.io/challenges/3JFYedSOZqAxYuOCNmYD) was to build an application to complete the given user stories.
+
+- [x] **User story:** I can see a list of properties
+- [x] **User story:** I can see the property card with a name, rating, apartment type, and super host
+- [x] **User story:** I can open the filter drawer
+- [ ] **User story:** I can filter properties by location and number of guests
+- [ ] **User story:** I can see the number of filtered items
+- [ ] **User story:** I can see pages following given designs
 
 ## How To Use
 
@@ -68,25 +74,26 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/your-user-name/your-project-name
+$ git clone https://github.com/Deekshithrathod/dc-fed-3-wind-bnb/tree/main
 
 # Install dependencies
 $ npm install
 
-# Run the app
-$ npm start
+# Start dev server
+$ npm run dev
 ```
 
 ## Acknowledgements
 
 <!-- This section should list any articles or add-ons/plugins that helps you to complete the project. This is optional but it will help you in the future. For example: -->
 
+- [Vite Guide](https://vitejs.dev/guide/)
+- [React Docs](https://react.dev/)
+- [Recoil Guide](https://recoiljs.org/docs/introduction/installation)
 - [Steps to replicate a design with only HTML and CSS](https://devchallenges-blogs.web.app/how-to-replicate-design/)
 - [Node.js](https://nodejs.org/)
-- [Marked - a markdown parser](https://github.com/chjj/marked)
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- GitHub [@Deekshithrathod](https://github.com/Deekshithrathod)
+- Twitter [@Deekshithrathod](https://twitter.com/Deekshithrathod)
