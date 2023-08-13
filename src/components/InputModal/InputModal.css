@@ -1,0 +1,56 @@
+.filter-container {
+  font-family: "Mulish", sans-serif;
+  font-style: normal;
+  line-height: normal;
+
+  border-radius: 1rem;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+
+  width: 80%;
+  margin: 4rem auto;
+}
+
+.filter-container > div {
+  width: 100%;
+}
+
+.btn-container {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search-btn {
+  background: rgba(235, 87, 87, 0.9);
+  color: #f2f2f2;
+  font-family: "Mulish", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  border-radius: 1rem;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.search-btn > svg {
+  margin-right: 0.5rem;
+}
+
+.results-container {
+  display: flex;
+}
+
+.results-container > div {
+  /* display: flex;
+   */
+  width: 100%;
+}

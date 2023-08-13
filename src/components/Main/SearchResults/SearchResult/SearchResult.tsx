@@ -1,5 +1,5 @@
+import "./SearchResult.css";
 import StarIcon from "@mui/icons-material/Star";
-import "./Stay.css";
 
 type stayInfo = {
   city?: string;
@@ -12,8 +12,14 @@ type stayInfo = {
   beds?: number | null;
   photo: string;
 };
-
-const Stay = ({ superHost, rating, beds, type, title, photo }: stayInfo) => {
+const SearchResult = ({
+  superHost,
+  rating,
+  beds,
+  type,
+  title,
+  photo,
+}: stayInfo) => {
   return (
     <div className="stay-card">
       <div className="stay-img">
@@ -30,7 +36,7 @@ const Stay = ({ superHost, rating, beds, type, title, photo }: stayInfo) => {
           </div>
           <div className="rating">
             <StarIcon style={{ color: `#EB5757` }} />
-            <span>{rating}</span>
+            <span>{rating.toFixed(1)}</span>
           </div>
         </div>
         <div className="second-row">{title}</div>
@@ -39,4 +45,4 @@ const Stay = ({ superHost, rating, beds, type, title, photo }: stayInfo) => {
   );
 };
 
-export default Stay;
+export default SearchResult;

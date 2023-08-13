@@ -1,0 +1,20 @@
+.search-results-heading {
+  color: #333;
+  font-family: "Montserrat";
+  font-style: normal;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 4rem;
+}
+
+.search-results-heading > h1 {
+  font-size: 1.5rem;
+}
+
+.search-results-heading > p {
+  font-size: 0.875rem;
+}

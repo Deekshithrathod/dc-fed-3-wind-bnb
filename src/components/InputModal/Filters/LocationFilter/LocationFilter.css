@@ -1,0 +1,42 @@
+.filter-input-container {
+  border-radius: 16px;
+  box-shadow: 0px 1px 6px 0px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 1.5rem;
+}
+
+.filter-input-container > label {
+  color: #333;
+  font-size: 0.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.filter-input-container > input {
+  border: none;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+
+  padding: 0.25rem 0;
+}
+
+/* Move to different file */
+.loc-search-results {
+  margin-top: 2.5rem;
+  margin-left: 2rem;
+}
+
+.loc-result {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.loc-result > p {
+  color: #4f4f4f;
+  font-size: 14px;
+  font-weight: 400;
+}

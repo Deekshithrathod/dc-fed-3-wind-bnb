@@ -1,21 +1,15 @@
-import { Box, Drawer } from "@mui/material";
+import { Drawer } from "@mui/material";
 import "./InputBox.css";
-import SearchIcon from "@mui/icons-material/Search";
-import GuestPicker from "../../GuestPicker/GuestPicker";
-import LocationSearch from "../../LocaltionSearch/LocationSearch";
-import { useState } from "react";
 import CustomInput from "./CustomInput/CustomInput";
+import InputModal from "../../InputModal/InputModal";
+import { useState } from "react";
+
 const InputBox = () => {
-  const [state, setState] = useState({
-    top: false,
-    left: false,
-    bottom: false,
-    right: false,
-  });
+  const anchor = `top`;
+  const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer =
-    (anchor: string, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
+    () => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
         event.type === "keydown" &&
         ((event as React.KeyboardEvent).key === "Tab" ||
@@ -23,42 +17,16 @@ const InputBox = () => {
       ) {
         return;
       }
-
-      setState({ ...state, [anchor]: open });
+      setIsDrawerOpen((prevState) => !prevState);
     };
-
-  const list = (anchor: string) => (
-    <Box
-      sx={{
-        width: `100vw`,
-        height: `50vh`,
-      }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, true)}
-      onKeyDown={toggleDrawer(anchor, true)}>
-      <div className="controls-bar">
-        <LocationSearch />
-        <GuestPicker />
-        <div className="btn-container">
-          <div className="search-btn">
-            <SearchIcon /> Search
-          </div>
-        </div>
-      </div>
-    </Box>
-  );
-  const anchor = `top`;
   return (
     <div className="input-box-conatiner">
       <CustomInput type="text" placeholder="Search Location" />
       <CustomInput type="text" placeholder="Add Guests" />
-      <CustomInput type="button" onClick={toggleDrawer(`top`, true)} />
+      <CustomInput type="button" onClick={toggleDrawer()} />
 
-      <Drawer
-        anchor={anchor}
-        open={state[anchor]}
-        onClose={toggleDrawer(anchor, false)}>
-        {list(anchor)}
+      <Drawer anchor={anchor} open={isDrawerOpen} onClose={toggleDrawer()}>
+        <InputModal toggleDrawer={toggleDrawer} />
       </Drawer>
     </div>
   );

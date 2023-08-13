@@ -7,3 +7,10 @@ nav {
   max-width: 70rem;
   margin: auto;
 }
+
+@media (max-width: 700px) {
+  nav {
+    flex-wrap: wrap;
+    gap: 3rem;
+  }
+}

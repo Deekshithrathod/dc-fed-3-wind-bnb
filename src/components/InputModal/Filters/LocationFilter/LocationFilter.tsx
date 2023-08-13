@@ -1,13 +1,12 @@
-import PlaceIcon from "@mui/icons-material/Place";
-import "./LocationSearch.css";
+import "./LocationFilter.css";
 import { useState } from "react";
 
-const LocationSearch = () => {
+const LocationFilter = () => {
   const [showResults, setShowResults] = useState(false);
   return (
-    <div className="loc-search">
+    <>
       <div
-        className="loc-input"
+        className="filter-input-container"
         style={{ border: showResults ? `1px solid black` : `` }}>
         <label htmlFor="add-loc">Location</label>
         <input
@@ -24,12 +23,9 @@ const LocationSearch = () => {
           }}
         />
       </div>
-      {showResults && (
+      {/* {showResults && (
         <div className="loc-search-results">
-          <div className="loc-result">
-            <PlaceIcon />
-            <p>Helsinki, Finland</p>
-          </div>
+          <LocationFilterResult place="Helsinki" country="Finland" />
           <div className="loc-result">
             <PlaceIcon />
             <p>Helsinki, Finland</p>
@@ -47,9 +43,9 @@ const LocationSearch = () => {
             <p>Helsinki, Finland</p>
           </div>
         </div>
-      )}
-    </div>
+      )} */}
+    </>
   );
 };
 
-export default LocationSearch;
+export default LocationFilter;
