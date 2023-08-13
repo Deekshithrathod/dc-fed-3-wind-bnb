@@ -1,30 +1,32 @@
 import "./InputModal.css";
 import { Box } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
-import LocationFilter from "./Filters/LocationFilter/LocationFilter";
-import GuestsFilter from "./Filters/GuestsFilter/GuestsFilter";
+import Filters from "./Filters/Filters";
+import LocationFilterResult from "./FilterOuts/LocationFilterResult/LocationFilterResult";
+import { useRecoilState } from "recoil";
+import { guestsFilterState } from "../../atoms/filters";
+import LocResults from "./FilterOuts/LocResults/LocResults";
 
 const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
+  const [{ adults, children }, setGuestFilterState] =
+    useRecoilState(guestsFilterState);
+
   return (
     <Box
       sx={{
         width: `100vw`,
         height: `50vh`,
+        minHeight: `30rem`,
+        overflowY: `scroll`,
       }}
       role="presentation"
       onClick={() => toggleDrawer()}
       onKeyDown={() => toggleDrawer()}>
-      <div className="filter-container">
-        <LocationFilter />
-        <GuestsFilter />
-        <div className="btn-container">
-          <div className="search-btn">
-            <SearchIcon /> Search
-          </div>
-        </div>
+      <div className="modal-heading">
+        <h2>Edit your search</h2>
       </div>
+      <Filters />
       <div className="results-container">
-        <div className="location-results"></div>
+        <LocResults />
         <div className="guest-options">
           <div className="option">
             <h4>Adults</h4>
@@ -32,14 +34,26 @@ const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
             <div className="guest-count-input">
               <span
                 onClick={() => {
-                  // setAdults((prev) => (prev > 0 ? prev - 1 : 0));
+                  setGuestFilterState((prevState) => {
+                    const retVal = {
+                      children: prevState.children,
+                      adults: prevState.adults > 0 ? prevState.adults - 1 : 0,
+                    };
+                    return retVal;
+                  });
                 }}>
                 -
               </span>
-              <input type="text" value={0} />
+              <input type="text" value={adults} />
               <span
                 onClick={() => {
-                  // setAdults((prev) => prev + 1);
+                  setGuestFilterState((prevState) => {
+                    const retVal = {
+                      adults: prevState.adults + 1,
+                      children: prevState.children,
+                    };
+                    return retVal;
+                  });
                 }}>
                 +
               </span>
@@ -51,15 +65,27 @@ const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
             <div className="guest-count-input">
               <span
                 onClick={() => {
-                  // setChildren((prev) => (prev > 0 ? prev - 1 : 0));
+                  setGuestFilterState((prevState) => {
+                    const retVal = {
+                      adults: prevState.adults,
+                      children:
+                        prevState.children > 0 ? prevState.children - 1 : 0,
+                    };
+                    return retVal;
+                  });
                 }}>
                 -
               </span>
-              {/* <input type="text" value={children} /> */}
-              <input type="text" value={0} />
+              <input type="text" value={children} />
               <span
                 onClick={() => {
-                  // setChildren((prev) => prev + 1);
+                  setGuestFilterState((prevState) => {
+                    const retVal = {
+                      adults: prevState.adults,
+                      children: prevState.children + 1,
+                    };
+                    return retVal;
+                  });
                 }}>
                 +
               </span>

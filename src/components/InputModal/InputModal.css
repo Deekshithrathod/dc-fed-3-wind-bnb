@@ -1,3 +1,16 @@
+.modal-heading {
+  color: #333;
+  font-family: "Mulish";
+  font-size: 0.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+
+  width: 80%;
+  max-width: 70rem;
+  margin: 2rem auto 0;
+}
+
 .filter-container {
   font-family: "Mulish", sans-serif;
   font-style: normal;
@@ -9,7 +22,8 @@
   display: flex;
 
   width: 80%;
-  margin: 4rem auto;
+  max-width: 70rem;
+  margin: 2rem auto;
 }
 
 .filter-container > div {
@@ -47,10 +61,13 @@
 
 .results-container {
   display: flex;
+  align-items: flex-start;
+
+  width: 80%;
+  max-width: 70rem;
+  margin: 2rem auto;
 }
 
-.results-container > div {
-  /* display: flex;
-   */
-  width: 100%;
+.guest-options {
+  padding-left: 3rem;
 }

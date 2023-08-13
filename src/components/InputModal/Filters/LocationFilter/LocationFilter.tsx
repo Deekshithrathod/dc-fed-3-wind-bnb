@@ -1,50 +1,32 @@
+import { useRecoilState } from "recoil";
 import "./LocationFilter.css";
 import { useState } from "react";
+import { locationFilterState } from "../../../../atoms/filters";
 
 const LocationFilter = () => {
-  const [showResults, setShowResults] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
+  const [currLoc, setCurrLoc] = useRecoilState(locationFilterState);
+
   return (
-    <>
-      <div
-        className="filter-input-container"
-        style={{ border: showResults ? `1px solid black` : `` }}>
-        <label htmlFor="add-loc">Location</label>
-        <input
-          type="text"
-          name="location"
-          id="add-loc"
-          placeholder="Add Location..."
-          onFocus={(e) => {
-            e.target.style.outline = `none`;
-            setShowResults(true);
-          }}
-          onBlur={() => {
-            setShowResults(false);
-          }}
-        />
-      </div>
-      {/* {showResults && (
-        <div className="loc-search-results">
-          <LocationFilterResult place="Helsinki" country="Finland" />
-          <div className="loc-result">
-            <PlaceIcon />
-            <p>Helsinki, Finland</p>
-          </div>
-          <div className="loc-result">
-            <PlaceIcon />
-            <p>Helsinki, Finland</p>
-          </div>
-          <div className="loc-result">
-            <PlaceIcon />
-            <p>Helsinki, Finland</p>
-          </div>
-          <div className="loc-result">
-            <PlaceIcon />
-            <p>Helsinki, Finland</p>
-          </div>
-        </div>
-      )} */}
-    </>
+    <div
+      className="filter-input-container"
+      style={{ border: isFocus ? `1px solid black` : `` }}>
+      <label htmlFor="add-loc">Location</label>
+      <input
+        type="text"
+        name="location"
+        id="add-loc"
+        placeholder="Add Location..."
+        onFocus={() => {
+          setIsFocus(true);
+        }}
+        onBlur={() => {
+          setIsFocus(false);
+        }}
+        value={currLoc}
+        onChange={(e) => setCurrLoc(e.target.value)}
+      />
+    </div>
   );
 };
 

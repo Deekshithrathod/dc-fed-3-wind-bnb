@@ -28,15 +28,3 @@
   margin-top: 2.5rem;
   margin-left: 2rem;
 }
-
-.loc-result {
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.loc-result > p {
-  color: #4f4f4f;
-  font-size: 14px;
-  font-weight: 400;
-}

@@ -1,12 +1,14 @@
 import "./SearchResults.css";
-import stays from "../../../../stays.json";
 import SearchResult from "./SearchResult/SearchResult";
+import { useRecoilValue } from "recoil";
+import { searchResultsState } from "../../../atoms/searchResults";
 
 const SearchResults = () => {
+  const filteredStays = useRecoilValue(searchResultsState);
   return (
     <div className="search-results">
-      {stays.map((stay) => (
-        <SearchResult {...stay} />
+      {filteredStays.map((stay, index) => (
+        <SearchResult {...stay} key={index} />
       ))}
     </div>
   );

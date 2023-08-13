@@ -1,0 +1,19 @@
+.loc-result {
+  font-family: "Mulish";
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+
+  display: flex;
+  align-items: center;
+}
+
+.loc-result > p {
+  color: #4f4f4f;
+  font-size: 14px;
+  font-weight: 400;
+
+  margin-left: 0.625rem;
+  text-transform: capitalize;
+}

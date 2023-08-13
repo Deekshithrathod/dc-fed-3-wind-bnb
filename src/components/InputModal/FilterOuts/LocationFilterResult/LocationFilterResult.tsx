@@ -1,4 +1,5 @@
 import PlaceIcon from "@mui/icons-material/Place";
+import "./LocationFilterResult.css";
 
 const LocationFilterResult = ({
   place,

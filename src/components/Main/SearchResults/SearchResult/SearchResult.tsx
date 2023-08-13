@@ -1,17 +1,7 @@
+import { ISearchResult } from "../../../../atoms/searchResults";
 import "./SearchResult.css";
 import StarIcon from "@mui/icons-material/Star";
 
-type stayInfo = {
-  city?: string;
-  country?: string;
-  superHost?: boolean;
-  title: string;
-  rating: number;
-  maxGuests: number;
-  type: string;
-  beds?: number | null;
-  photo: string;
-};
 const SearchResult = ({
   superHost,
   rating,
@@ -19,7 +9,7 @@ const SearchResult = ({
   type,
   title,
   photo,
-}: stayInfo) => {
+}: ISearchResult) => {
   return (
     <div className="stay-card">
       <div className="stay-img">

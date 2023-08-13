@@ -1,0 +1,8 @@
+.location-results {
+  width: 33%;
+  height: 17rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
