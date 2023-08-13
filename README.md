@@ -66,6 +66,10 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - [x] **User story:** I can see the number of filtered items
 - [x] **User story:** I can see pages following given designs
 
+|                  Desktop view Modal                  |                     Mobile                      |
+| :--------------------------------------------------: | :---------------------------------------------: |
+| ![Project On Desktop](public/demo-desktop-modal.png) | ![Demo On Mobile](public/demo-mobile-modal.png) |
+
 ## How To Use
 
 <!-- Example: -->

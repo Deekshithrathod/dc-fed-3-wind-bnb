@@ -1,5 +1,4 @@
 import "./InputModal.css";
-import { Box } from "@mui/material";
 import Filters from "./Filters/Filters";
 import { useRecoilState } from "recoil";
 import { guestsFilterState } from "../../atoms/filters";
@@ -10,13 +9,8 @@ const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
     useRecoilState(guestsFilterState);
 
   return (
-    <Box
-      sx={{
-        width: `100vw`,
-        height: `50vh`,
-        minHeight: `30rem`,
-        overflowY: `scroll`,
-      }}
+    <div
+      className="modal-container"
       role="presentation"
       onClick={() => toggleDrawer()}
       onKeyDown={() => toggleDrawer()}>
@@ -92,7 +86,7 @@ const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
           </div>
         </div>
       </div>
-    </Box>
+    </div>
   );
 };
 
