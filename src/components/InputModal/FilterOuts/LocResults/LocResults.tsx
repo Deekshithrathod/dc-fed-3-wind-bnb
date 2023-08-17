@@ -1,21 +1,11 @@
-import { useRecoilValue } from "recoil";
-import LocationFilterResult from "../LocationFilterResult/LocationFilterResult";
 import "./LocResults.css";
-import { filteredLocResults } from "../../../../atoms/filters";
+import { useRecoilValue } from "recoil";
+import { showLocSearchResults } from "../../../../atoms/filterResults";
 
 const LocResults = () => {
-  const locResultsList = useRecoilValue(filteredLocResults);
-  return (
-    <div className="location-results">
-      {locResultsList.map((res, index) => (
-        <LocationFilterResult
-          place={res.city}
-          country={res.country}
-          key={index}
-        />
-      ))}
-    </div>
-  );
+  const showLocResults = useRecoilValue(showLocSearchResults);
+
+  return <div className="location-results">{showLocResults && "safs"}</div>;
 };
 
 export default LocResults;

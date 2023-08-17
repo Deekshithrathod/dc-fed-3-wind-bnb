@@ -1,12 +1,15 @@
-import { useRecoilState } from "recoil";
 import "./LocationFilter.css";
-import { useState } from "react";
-import { locationFilterState } from "../../../../atoms/filters";
+import { useSetRecoilState } from "recoil";
+import { useEffect, useState } from "react";
+import { showLocSearchResults } from "../../../../atoms/filterResults";
 
 const LocationFilter = () => {
   const [isFocus, setIsFocus] = useState(false);
-  const [currLoc, setCurrLoc] = useRecoilState(locationFilterState);
+  const setShowLocSearchResuls = useSetRecoilState(showLocSearchResults);
 
+  useEffect(() => {
+    setShowLocSearchResuls(isFocus);
+  }, [isFocus]);
   return (
     <div
       className="filter-input-container"
@@ -23,8 +26,6 @@ const LocationFilter = () => {
         onBlur={() => {
           setIsFocus(false);
         }}
-        value={currLoc}
-        onChange={(e) => setCurrLoc(e.target.value)}
       />
     </div>
   );

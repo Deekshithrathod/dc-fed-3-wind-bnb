@@ -1,13 +1,8 @@
 import "./InputModal.css";
 import Filters from "./Filters/Filters";
-import { useRecoilState } from "recoil";
-import { guestsFilterState } from "../../atoms/filters";
 import LocResults from "./FilterOuts/LocResults/LocResults";
 
 const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
-  const [{ adults, children }, setGuestFilterState] =
-    useRecoilState(guestsFilterState);
-
   return (
     <div
       className="modal-container"
@@ -25,63 +20,18 @@ const InputModal = ({ toggleDrawer }: { toggleDrawer: Function }) => {
             <h4>Adults</h4>
             <h4>Ages 13 or above</h4>
             <div className="guest-count-input">
-              <span
-                onClick={() => {
-                  setGuestFilterState((prevState) => {
-                    const retVal = {
-                      children: prevState.children,
-                      adults: prevState.adults > 0 ? prevState.adults - 1 : 0,
-                    };
-                    return retVal;
-                  });
-                }}>
-                -
-              </span>
-              <input type="text" value={adults} />
-              <span
-                onClick={() => {
-                  setGuestFilterState((prevState) => {
-                    const retVal = {
-                      adults: prevState.adults + 1,
-                      children: prevState.children,
-                    };
-                    return retVal;
-                  });
-                }}>
-                +
-              </span>
+              <span onClick={() => {}}>-</span>
+              <input type="text" value={0} />
+              <span onClick={() => {}}>+</span>
             </div>
           </div>
           <div className="option">
             <h4>Children</h4>
             <h4>Ages 2-12</h4>
             <div className="guest-count-input">
-              <span
-                onClick={() => {
-                  setGuestFilterState((prevState) => {
-                    const retVal = {
-                      adults: prevState.adults,
-                      children:
-                        prevState.children > 0 ? prevState.children - 1 : 0,
-                    };
-                    return retVal;
-                  });
-                }}>
-                -
-              </span>
-              <input type="text" value={children} />
-              <span
-                onClick={() => {
-                  setGuestFilterState((prevState) => {
-                    const retVal = {
-                      adults: prevState.adults,
-                      children: prevState.children + 1,
-                    };
-                    return retVal;
-                  });
-                }}>
-                +
-              </span>
+              <span onClick={() => {}}>-</span>
+              <input type="text" value={0} />
+              <span onClick={() => {}}>+</span>
             </div>
           </div>
         </div>

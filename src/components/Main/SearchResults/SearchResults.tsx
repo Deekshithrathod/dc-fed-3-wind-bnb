@@ -1,16 +1,21 @@
-import "./SearchResults.css";
-import SearchResult from "./SearchResult/SearchResult";
 import { useRecoilValue } from "recoil";
-import { searchResultsState } from "../../../atoms/searchResults";
+import "./SearchResults.css";
+import { fitleredSearchResults } from "../../../atoms/searchResults";
+import SearchResult from "./SearchResult/SearchResult";
+import SearchHeading from "./SearchHeading/SearchHeading";
 
 const SearchResults = () => {
-  const filteredStays = useRecoilValue(searchResultsState);
+  const filteredResults = useRecoilValue(fitleredSearchResults);
+
   return (
-    <div className="search-results">
-      {filteredStays.map((stay, index) => (
-        <SearchResult {...stay} key={index} />
-      ))}
-    </div>
+    <main>
+      <SearchHeading count={filteredResults.length} />
+      <div className="search-results">
+        {filteredResults.map((res) => (
+          <SearchResult {...res} />
+        ))}
+      </div>
+    </main>
   );
 };
 

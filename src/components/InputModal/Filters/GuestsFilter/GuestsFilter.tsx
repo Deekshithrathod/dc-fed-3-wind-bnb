@@ -1,11 +1,8 @@
 import { useState } from "react";
 import "./GuestsFilter.css";
-import { useRecoilValue } from "recoil";
-import { guestsFilterState } from "../../../../atoms/filters";
 
 const GuestsFilter = () => {
   const [isFocus, setIsFocus] = useState(false);
-  const { adults, children } = useRecoilValue(guestsFilterState);
   // const [guestsFilter, setGuestsFilter] = useRecoilState(guestsFilterState);
 
   return (
@@ -18,9 +15,7 @@ const GuestsFilter = () => {
           type="text"
           name="guests"
           id="add-guests"
-          value={`${
-            adults + children
-          } Guests : ${adults} Adults, ${children} Children`}
+          value={``}
           placeholder="Add Guests..."
           onFocus={() => {
             setIsFocus(true);
