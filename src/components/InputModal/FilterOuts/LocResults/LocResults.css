@@ -1,7 +1,5 @@
 .location-results {
-  width: 33%;
   height: 17rem;
-  background-color: aqua;
 
   display: flex;
   flex-direction: column;

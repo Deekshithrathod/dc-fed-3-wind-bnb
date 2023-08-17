@@ -1,18 +1,13 @@
-import PlaceIcon from "@mui/icons-material/Place";
 import "./LocationFilterResult.css";
+import PlaceIcon from "@mui/icons-material/Place";
+import { ILocSearchResult } from "../../../../../atoms/searchResults";
 
-const LocationFilterResult = ({
-  place,
-  country,
-}: {
-  place: string;
-  country: string;
-}) => {
+const LocationFilterResult = ({ city, country }: ILocSearchResult) => {
   return (
-    <div className="loc-result">
+    <div className="loc-result" data-loc={`${city}|${country}`}>
       <PlaceIcon />
       <p>
-        {place}, {country}
+        {city}, {country}
       </p>
     </div>
   );

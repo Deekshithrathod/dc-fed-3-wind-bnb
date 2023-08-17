@@ -1,0 +1,53 @@
+.guest-options {
+  padding-left: 3rem;
+}
+
+.option {
+  color: #333;
+  font-family: Mulish, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  line-height: normal;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+
+.option > h4:nth-child(2) {
+  color: #bdbdbd;
+  font-weight: 400;
+}
+
+.guest-count-input {
+  width: fit-content;
+  margin-top: 1rem;
+}
+
+.guest-count-input > span {
+  font-size: 1rem;
+  color: #828282;
+  opacity: 0.5;
+
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #828282;
+
+  cursor: pointer;
+}
+.guest-count-input > span:hover {
+  color: white;
+  background-color: #bdbdbd;
+}
+.guest-count-input > span:active {
+  background-color: #383838;
+}
+.guest-count-input > input {
+  color: #333;
+  font-family: Mulish, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  border: none;
+  width: 3rem;
+  text-align: center;
+}

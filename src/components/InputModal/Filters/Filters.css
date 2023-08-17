@@ -42,7 +42,14 @@
   margin: 0 auto;
   padding: 1rem 1.5rem;
 }
+.search-btn:hover {
+  cursor: pointer;
+  background: rgba(206, 77, 77, 0.9);
+}
 
+.search-btn:active {
+  background: rgba(173, 57, 57, 0.9);
+}
 .search-btn > svg {
   margin-right: 0.5rem;
 }
