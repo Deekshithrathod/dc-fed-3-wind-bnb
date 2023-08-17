@@ -11,8 +11,8 @@ const SearchResults = () => {
     <main>
       <SearchHeading count={filteredResults.length} />
       <div className="search-results">
-        {filteredResults.map((res) => (
-          <SearchResult {...res} />
+        {filteredResults.map((res, i) => (
+          <SearchResult {...res} key={i} />
         ))}
       </div>
     </main>

@@ -19,12 +19,12 @@ const GuestsFilter = () => {
       <div
         className="filter-input-container"
         style={{ border: isFocus ? `1px solid black` : `` }}>
-        <label htmlFor="add-guests">Guests</label>
+        <label htmlFor="add-guests">Guests | {val}</label>
         <input
           type="text"
           name="guests"
           id="add-guests"
-          value={val}
+          // value={val}
           placeholder="Add Guests..."
           onFocus={() => {
             setIsFocus(true);

@@ -26,7 +26,7 @@ export const adultGuests = atom({
 });
 
 export const displayGuests = selector({
-  key: "",
+  key: "displayGuests",
   get: ({ get }) => {
     const c = get(childrenGuests);
     const a = get(adultGuests);

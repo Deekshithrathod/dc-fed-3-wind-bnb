@@ -14,7 +14,7 @@ const GuestOptions = () => {
           <span onClick={() => setAG((prev) => (prev > 0 ? prev - 1 : 0))}>
             -
           </span>
-          <input type="text" value={aG} />
+          <input type="text" value={aG} onChange={() => {}} />
           <span onClick={() => setAG((prev) => prev + 1)}>+</span>
         </div>
       </div>
@@ -25,7 +25,7 @@ const GuestOptions = () => {
           <span onClick={() => setCG((prev) => (prev > 0 ? prev - 1 : 0))}>
             -
           </span>
-          <input type="text" value={cG} />
+          <input type="text" value={cG} onChange={() => {}} />
           <span onClick={() => setCG((prev) => prev + 1)}>+</span>
         </div>
       </div>

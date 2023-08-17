@@ -30,8 +30,8 @@ const LocResults = ({ toggle }: { toggle: Function }) => {
   const Results = () => {
     return (
       <>
-        {searchResults.map((res) => (
-          <LocationFilterResult {...res} />
+        {searchResults.map((res, i) => (
+          <LocationFilterResult {...res} key={i} />
         ))}
       </>
     );
