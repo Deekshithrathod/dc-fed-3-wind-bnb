@@ -24,7 +24,7 @@ const GuestsFilter = () => {
           type="text"
           name="guests"
           id="add-guests"
-          // value={val}
+          autoComplete="off"
           placeholder="Add Guests..."
           onFocus={() => {
             setIsFocus(true);

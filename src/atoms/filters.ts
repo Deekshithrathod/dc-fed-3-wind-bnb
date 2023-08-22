@@ -10,11 +10,6 @@ export const selectedCity = atom({
   default: "",
 });
 
-export const selectedCountry = atom({
-  key: "selectedCountry",
-  default: "",
-});
-
 export const childrenGuests = atom({
   key: "childrenGuests",
   default: 0,

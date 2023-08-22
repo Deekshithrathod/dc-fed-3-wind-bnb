@@ -26,9 +26,8 @@ const LocationFilter = () => {
         onFocus={() => {
           setIsFocus(true);
         }}
-        onBlur={() => {
-          // setIsFocus(false);
-        }}
+        onBlur={() => {}}
+        autoComplete="off"
         value={loc}
         onChange={(e) => setLoc(e.target.value)}
       />

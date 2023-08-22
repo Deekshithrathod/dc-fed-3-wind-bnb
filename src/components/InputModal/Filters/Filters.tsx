@@ -12,7 +12,6 @@ const Filters = ({ toggle }: { toggle: Function }) => {
         <div
           className="search-btn"
           onClick={() => {
-            console.log(`button Clicked`);
             toggle(false);
           }}>
           <SearchIcon /> Search

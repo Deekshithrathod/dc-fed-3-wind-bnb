@@ -5,7 +5,6 @@ import {
   childrenGuests,
   locFilterKeyword,
   selectedCity,
-  selectedCountry,
 } from "./filters";
 
 export interface ILocSearchResult {
@@ -22,7 +21,19 @@ export interface ISearchResult {
   photo: string;
 }
 
-export const searchResults = atom({
+export interface IStay {
+  city: string;
+  country: string;
+  superHost: boolean;
+  title: string;
+  rating: number;
+  maxGuests: number;
+  type: string;
+  beds: number;
+  photo: string;
+}
+
+export const searchResults = atom<IStay[]>({
   key: "searchResults",
   default: defaultStays,
 });
@@ -30,31 +41,24 @@ export const searchResults = atom({
 export const fitleredSearchResults = selector({
   key: "filteredSearchResults",
   get: ({ get }) => {
-    console.log(`filteredTriggered`);
-
     const allResults = get(searchResults);
 
     const locKeyword = get(locFilterKeyword).toLowerCase();
     const selCity = get(selectedCity).toLowerCase();
-    const selCountry = get(selectedCountry).toLowerCase();
 
     const guests1 = get(childrenGuests);
     const guests2 = get(adultGuests);
 
-    console.log(locKeyword, selCity, selCountry, guests1, guests2);
-    console.log("Keyword: ", locKeyword);
-
     const filteredByLocation = allResults.filter((res) => {
-      // const str = JSON.stringify(res).toLowerCase();
       let keywordInObject = JSON.stringify(res)
-        .toLocaleLowerCase()
+        .toLowerCase()
         .includes(locKeyword);
 
       if (locKeyword && keywordInObject) {
         return keywordInObject;
       }
 
-      return res.city.includes(selCity) || res.country.includes(selCountry);
+      return res.city.toLowerCase().includes(selCity);
     });
 
     const filteredByGuestsCount = filteredByLocation.filter((res) => {
@@ -68,7 +72,7 @@ export const fitleredSearchResults = selector({
 export const filteredLocSearchResults = selector({
   key: "filteredLocSearchResults",
   get: ({ get }) => {
-    const allResults: ILocSearchResult[] = defaultStays;
+    const allResults: ILocSearchResult[] = getSearchSetFromStays();
     const locKeyword = get(locFilterKeyword).toLowerCase();
 
     const filteredList = allResults.filter((res) => {
@@ -78,3 +82,17 @@ export const filteredLocSearchResults = selector({
     return filteredList;
   },
 });
+
+const list = defaultStays;
+const defaultStaysStringList = list.map((stay) => {
+  return JSON.stringify({ city: stay.city, country: stay.country });
+});
+const listWithoutDuplicates = new Set(defaultStaysStringList.sort());
+const retVal: ILocSearchResult[] = [];
+listWithoutDuplicates.forEach((str) => {
+  retVal.push(JSON.parse(str));
+});
+
+const getSearchSetFromStays = (): ILocSearchResult[] => {
+  return retVal;
+};
