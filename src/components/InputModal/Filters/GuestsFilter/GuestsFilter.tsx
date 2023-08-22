@@ -10,7 +10,6 @@ const GuestsFilter = () => {
 
   const val = useRecoilValue(displayGuests);
 
-  // const [guestsFilter, setGuestsFilter] = useRecoilState(guestsFilterState);
   useEffect(() => {
     setShowOptions(isFocus);
   }, [isFocus]);

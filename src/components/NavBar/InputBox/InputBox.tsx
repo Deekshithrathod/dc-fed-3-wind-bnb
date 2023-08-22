@@ -9,7 +9,6 @@ import { displayGuests, selectedCity } from "../../../atoms/filters";
 const InputBox = () => {
   const selCity = useRecoilValue(selectedCity);
   const guestString = useRecoilValue(displayGuests);
-  // const selCity = useRecoilValue(selectedCity)
 
   const anchor = `top`;
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
